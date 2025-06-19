@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+env/
+venv_whisper/
+
+# Environment files
+.env
+.env.*
+
+# Poetry
+poetry.lock
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Data
+data/
+out/
+*.wav
+*.mp3
+*.mp4
+*.m4a
+*.srt
+*.txt
+
+# Mac system files
+.DS_Store

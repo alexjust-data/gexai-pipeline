@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "gexai"
+version = "0.1.0"
+description = "Pipeline for transcription, speaker diarization, and future AI tools"
+authors = [ "Alex Just Rodriguez <alexjustdata@gmail.com>" ]
+packages = [
+  { include = "gexai", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = { version = "^0.12", extras = ["all"] }
+pydantic = "^2.7"
+rich = "^13.7"
+tqdm = "^4.66"
+openai-whisper = { git = "https://github.com/openai/whisper.git" }
+pyannote-audio = "^3.3"
+yt-dlp = "^2025.3"
+pydub = "^0.25"
+
+[tool.poetry.scripts]
+gexai = "gexai.cli:app"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2"
+black = "^24.3"
+isort = "^5.13"
