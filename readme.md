@@ -1,4 +1,4 @@
-# GexAI — AI Audio Transcription & Diarization Pipeline
+# 📚 GexAI — AI Audio Transcription & Diarization Pipeline
 
 GexAI is a powerful and extensible Python pipeline that lets you transcribe audio/video files (including YouTube links) using OpenAI Whisper, and optionally perform speaker diarization using pyannote-audio.
 
@@ -57,17 +57,50 @@ This will:
 
 ---
 
-## 🖥 CLI Usage
+## 🖥 CLI Usage (via terminal)
+
+This project uses Python's `-m` module execution.
 
 ```bash
 # Show help
-$ gexai --help
+$ python -m gexai.cli --help
+```
 
-# Transcribe
-$ gexai transcribe https://www.youtube.com/watch?v=sw3N0leUULg
+### Transcribe a YouTube video
 
-# Diarize
-$ gexai diarize path/to/audio.wav
+```bash
+$ python -m gexai.cli transcribe "https://www.youtube.com/watch?v=sw3N0leUULg"
+```
+
+### Transcribe + Diarize
+
+```bash
+$ python -m gexai.cli transcribe "https://www.youtube.com/watch?v=sw3N0leUULg" --diarize
+```
+
+### Diarize a local WAV file
+
+```bash
+$ python -m gexai.cli diarize path/to/audio.wav
+```
+
+### Valid CLI Combinations
+
+```bash
+# Local file only (transcription only)
+$ python -m gexai.cli transcribe path/to/audio.mp3
+
+# Local file with diarization
+$ python -m gexai.cli transcribe path/to/audio.wav --diarize
+
+# YouTube video transcription only
+$ python -m gexai.cli transcribe "https://www.youtube.com/watch?v=sw3N0leUULg"
+
+# YouTube video transcription + diarization
+$ python -m gexai.cli transcribe "https://www.youtube.com/watch?v=sw3N0leUULg" --diarize
+
+# Diarize a local WAV
+$ python -m gexai.cli diarize path/to/audio.wav
 ```
 
 ---
@@ -114,9 +147,8 @@ WHISPER_MODEL=small
 
 ---
 
-## 📄 License
-
 MIT License — © Alex Just Rodriguez
+
 
 
 
